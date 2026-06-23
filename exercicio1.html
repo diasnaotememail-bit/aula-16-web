@@ -15,7 +15,6 @@
             grid-template-columns: repeat(3, 160px);
             gap: 10px;
             padding: 20px;
-            /* Centraliza a grid na tela opcionalmente */
             justify-content: center; 
         }
 
@@ -31,17 +30,14 @@
         }
     </style>
     <script>
-        // Variável global para rastrear o número total de itens gerados
         let totalItens = 0;
 
         window.onload = inicio;
 
         function inicio() {
-            // Adicionamos 30 itens inicialmente para garantir que a página tenha altura 
-            // suficiente para criar uma barra de rolagem
+            
             adicionarItens(30);
 
-            // Adiciona o listener para o evento 'scroll' no navegador 
             window.addEventListener('scroll', verificarRolagem);
         }
 
@@ -56,15 +52,13 @@
                 novoConteudo += novaCaixa(texto);
             }
             
-            // Adiciona os novos elementos ao final do container principal
             destino.innerHTML += novoConteudo;
         }
 
         function verificarRolagem() {
-            // Calcula se a altura visível + o total rolado é maior ou igual à altura total do corpo da página
-            // A subtração de um pequeno valor (como 10) serve como margem para engatilhar um pouco antes de bater no fundo
+
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
-                // Adiciona mais 3 itens (1 linha completa da sua grid atual) quando chegar ao fim
+
                 adicionarItens(3);
             }
         }
